@@ -1,0 +1,124 @@
+<html>
+       <head>
+         <title> Form Validation </title>
+         <script>
+              function validation()
+             {
+                  var u=document.getElementById("name").value;
+	if(u=="")
+                {
+	window.alert("uname can't be blank");
+                  return false;
+                } 
+                if(u.length<6)
+                {
+                    alert("User name should contain atleasr 6 characters");
+                     return false;
+              }
+               var letters=/^[a-zA-Z\s]+$/;
+	if(!u.match(letters))
+                   {
+                    alert("user name should contains alphabets only");
+                     return false;
+                  }
+                 var p=document.myform.pwd.value;
+               var c=document.myform.cpwd.value;
+                if(p=="")
+                {
+	window.alert("pwd can't be blank");
+                  return false;
+                } 
+               if(p.length<6)
+              {
+                   window.alert("pwd should contains atleast 6 characters");
+                    return false;
+            }
+            if(p!=c)
+            {
+                  alert("pwd and cpwd should be same");
+                   return false;
+           }
+           var mob=document.myform.mobile.value;
+           if(mob=="")
+            {
+                 alert("Mobile no can't be blank");
+                  return false;
+            }
+            if(isNaN(mob))
+            {
+               alert("Mobile no should contain digits only");
+                return false;
+            }
+            if(mob.length!=10)
+            {
+                  alert("Mobile no should contain 10 digits only");
+                  return false;
+          }
+            email=document.myform.mail.value;
+            atpos=email.indexOf("@");
+            dotpos=email.lastIndexOf(".");
+            if(email=="")
+           {
+                  alert("It shouldn't be blank");
+                  return false;
+           }
+           if(atpos<1 || dotpos < atpos+2 || dotpos+2 >= email.length  )
+           {
+            alert("It shouldn't be valid adress");
+                  return false;
+           }
+         alert("Registration successful");
+         return true;
+  
+                
+             }
+      </script>
+      </head>
+
+    <body bgcolor="skyblue">
+	
+         <form name="myform" action="index.html" onsubmit="return validation()">
+         <table border="2" align="center" bgcolor="pink" height=200px width=600px>
+	 <caption style="text-align:center"><h1><u>LOGIN TO WEBSITE</u><h1></caption>
+	<tr>
+              <td>Enter your name:</td><td> <input type="text"  id="name"/></td>
+	</tr>
+	<tr>
+              <td>Enter your password:</td> <td><input type="password" name="pwd"/> </td>
+	</tr>
+	<tr>
+               <td>Enter your Confirm password:</td> <td><input type="password" name="cpwd"/> </td>
+	</tr>
+	<tr>
+             <td>Enter mobile no:</td> <td> <input type="text" name="mobile"/> </td>
+	</tr>
+	<tr>
+               <td>Enter email :</td> <td> <input type="text" name="mail" /> </td>
+	</tr>
+	<tr>
+             <td>Choose your gender:</td> <td> <input type="radio" name="gender"  id="m" value="male"/> Male
+		            <input type="radio"  name="gender"  id="f" value="female" /> Female </td>
+	</tr>
+	<tr>
+            <td colspan="2">Select your Country <select>
+                        <option> Select ur country </option>
+			<option> India </option>
+			<option> US </option>
+			<option> Australia </option>
+		           </select>  </td>
+	</tr>
+	<tr>
+          <td>Languages Known:</td> <td><input type="checkbox"  name="lang"/> Telugu 
+                                           <input type="checkbox" name="lang" /> English
+		      <input type="checkbox" name="lang" /> Hindi</td>
+      </tr>
+	<tr>
+      <td> <input type="submit"/> </td> <td><input type="reset"/></td>
+	</tr>
+	</table>
+     </form>
+  </body>
+</html>
+<style>
+
+ 				
